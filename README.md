@@ -1,85 +1,70 @@
-# React Material-UI Step Form
+# Getting Started with Create React App
 
-React Material UI multi step form with basic form `onChange` validation logic. inspired by [Traversy Media](https://www.youtube.com/watch?v=zT62eVxShsY) tutorial and using Material-ui [checkout](https://material-ui.com/getting-started/templates/checkout/) free template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<hr />
+## Available Scripts
 
-![screenshot](./screenshot.gif)
+In the project directory, you can run:
 
-### Instructions
+### `npm start`
 
-- Download or clone the repo:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```sh
-git clone https://github.com/awran5/react-material-ui-step-form.git
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Dependencies
+### `npm test`
 
-- [Material-UI](https://material-ui.com/) v5 or higher
-- React version supports [Hooks](https://reactjs.org/docs/hooks-intro.html)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```jsx
-// src/Context.tsx
-const variant = 'standard' // `filled` | `outlined` | `standard`
-const margin = 'normal' // `dense` | `none` | `normal`
-```
+### `npm run build`
 
-### Example
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```tsx
-type ValidationSchema = Record<
-  string,
-  {
-    value?: any
-    error?: string
-    required?: boolean
-    validate?: 'text' | 'number' | 'email' | 'phone' | 'zip' | 'checkbox' | 'select'
-    minLength?: number
-    maxLength?: number
-    helperText?: string
-  }
->
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-// src/initialValues.tsx
-const initialValues: ValidationSchema = {
-  yourFieldname: {
-    value: '',                          // will be filled with field value
-    error: '',                          // will be filled with error message
-    required: true,                     // if `false` field will be still validated but will not enable the `next` button
-    validate: 'text',                   // field validation logic (see types above)
-    minLength: 2,                       // validate min length
-    maxLength: 20,                      // validate max length
-    helperText: 'custom error message'  // change the default error message (applied to `validate` types only)
-  },
-  {
-    // another field
-  }
-}
-```
+### `npm run eject`
 
-### Changelog - 10/2021
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- Update: MUI v5
-- fix: minor bugs
-- style: cleaning up
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Changelog - 07/2021
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- Refactor: code to Typescript
-- Refactor: Validation logic, now you can control all validaton logic inside `src/initialValues.tsx` file
-- Update: app dependencies
-- Add: React Context provides to manage Components state
-- Add: Option to change all fields `variant` and `margin` that applied to [TextField](https://material-ui.com/api/text-field/)
-- Add: eslint with [airbnb](https://www.npmjs.com/package/eslint-config-airbnb) style
-- Add: [Checkbox](https://material-ui.com/components/checkboxes/) field
-- Add: `Required` field logic
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-<br />
+## Learn More
 
-### [Live Demo](https://react-material-ui-step-form.vercel.app/)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-<br />
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-[![Edit react-material-ui-step-form](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-material-ui-step-form-ui788?fontsize=14&hidenavigation=1&theme=dark)
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

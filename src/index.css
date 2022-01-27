@@ -1,5 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
-body, html {
+* {
   font-family: 'Inter', sans-serif;
 }
+
+body {
+  margin: 0;
+  color: #000000;
+  background-color: #E5E5E5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* .text-purple{
+  color: #333366;
+  background-color: #333366;
+} */
