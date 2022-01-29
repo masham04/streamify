@@ -10,7 +10,8 @@ export default function Header() {
       alignItems: "center",
     }}>
       <img src={logo} alt='logo' />
-      <h5 style={{paddingTop: '2px'}}>Streamify</h5>
+      &nbsp;
+      <h4 style={{paddingTop: '2px'}}>Streamify</h4>
     </Box>
   );
 }

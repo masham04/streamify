@@ -1,112 +1,45 @@
-import React from "react";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
+import { Button, Grid, Link } from "@mui/material";
+import { Box } from "@mui/system";
+import React, { useState } from "react";
 import Header from "./Header";
+import Step1 from "./steps/Step1";
+import Step2 from "./steps/Step2";
+import Step3 from "./steps/Step3";
+import Step4 from "./steps/Step4";
+import Step5 from "./steps/Step5";
 
 const StepForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+  const [active, setActive] = useState(0);
   return (
-    <div style={{marginTop: '10vh'}}>
+    <div style={{ marginTop: "10vh" }}>
       <Header />
+
+      {active === 0 && <Step1 />}
+      {active === 1 && <Step2 />}
+      {active === 2 && <Step3 />}
+      {active === 3 && <Step4 />}
+      {active === 4 && <Step5 />}
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "start",
+          flexDirection: "row-reverse",
+          alignItems: "center",
         }}
       >
-        <h4>Create your Streamify Account</h4>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="given-name"
-                name="firstName"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="family-name"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
+        <Button
+          onClick={() => setActive(active + 1)}
+          variant="contained"
+          sx={{ mt: 3, mb: 2, float: "right" }}
+        >
+          Next
+        </Button>
+        <Grid container>
+          <Grid item>
+            <Link href="#" variant="body2">
+              Already have an account? Sign in
+            </Link>
           </Grid>
-          <Button
-            type="submit"
-            
-            variant="contained"
-            sx={{ mt: 3, mb: 2 ,float:'right'}}
-          >
-            Sign Up
-          </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
-        </Box>
+        </Grid>
       </Box>
     </div>
   );
